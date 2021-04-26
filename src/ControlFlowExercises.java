@@ -57,27 +57,66 @@ public class ControlFlowExercises {
         // 3
         Scanner sc = new Scanner(System.in);
 
+//        boolean confirm;
+//        do {
+//            System.out.println("What number would you like to go up? ");
+//            int upToUserInput = sc.nextInt();
+//
+//            System.out.println("Here is your table!\n");
+//            System.out.println("number | squared | cubed");
+//            System.out.println("------ | ------- | -----");
+//
+//            for (int i = 1; i <= upToUserInput; i++ ) {
+//                double squared = Math.pow(i, 2);
+//                double cubed = Math.pow(i, 3);
+//                int sq = (int) squared;
+//                int cu = (int) cubed;
+//                System.out.printf("%s     | %s      | %s    \n", i, sq, cu);
+//            }
+//
+//            System.out.print("Continue? [y/N]\n");
+//            String userInput = sc.next();
+//            confirm = userInput.equalsIgnoreCase("y");
+//
+//        } while(confirm);
+
+        // 4
         boolean confirm;
         do {
-            System.out.println("What number would you like to go up? ");
-            int upToUserInput = sc.nextInt();
+            System.out.println("What is the numerical grade you received from 0 to 100? ");
+            int userGrade = sc.nextInt();
 
-            System.out.println("Here is your table!\n");
-            System.out.println("number | squared | cubed");
-            System.out.println("------ | ------- | -----");
-
-            for (int i = 1; i <= upToUserInput; i++ ) {
-                double squared = Math.pow(i, 2);
-                double cubed = Math.pow(i, 3);
-                int sq = (int) squared;
-                int cu = (int) cubed;
-                System.out.printf("%s     | %s      | %s    \n", i, sq, cu);
+            if (userGrade >= 99) {
+                System.out.println("Your grade is an A+");
+            } else if (userGrade >= 90) {
+                System.out.println("Your grade is a A");
+            } else if (userGrade >= 88) {
+                System.out.println("Your grade is a A-");
+            } else if (userGrade >= 86) {
+                System.out.println("Your grade is a B+");
+            } else if (userGrade >= 82) {
+                System.out.println("Your grade is a B");
+            } else if (userGrade >= 80) {
+                System.out.println("Your grade is a B-");
+            } else if (userGrade >= 77) {
+                System.out.println("Your grade is a C+");
+            } else if (userGrade >= 69) {
+                System.out.println("Your grade is a C");
+            } else if (userGrade >= 67) {
+                System.out.println("Your grade is a C-");
+            } else if (userGrade >= 65) {
+                System.out.println("Your grade is a D+");
+            } else if (userGrade >= 62) {
+                System.out.println("Your grade is a D");
+            } else if (userGrade >= 60) {
+                System.out.println("Your grade is a D-");
+            } else if (userGrade >= 0) {
+                System.out.println("Your grade is a F");
             }
 
             System.out.print("Continue? [y/N]\n");
             String userInput = sc.next();
             confirm = userInput.equalsIgnoreCase("y");
-
         } while(confirm);
     }
 }
