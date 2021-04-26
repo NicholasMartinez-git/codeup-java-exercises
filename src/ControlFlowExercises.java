@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
         // 1a.
@@ -39,17 +41,39 @@ public class ControlFlowExercises {
 //        }
 
         // 2
-        for (int i = 1; i <= 100; i++) {
-//            System.out.println(i);
-            if (i % 15 == 0) {
-                System.out.println("FizzBuzz");
-            } else if (i % 5 == 0) {
-                System.out.println("Buzz");
-            } else if (i % 3 == 0) {
-                System.out.println("Fizz");
-            } else {
-                System.out.println(i);
-            }
+//        for (int i = 1; i <= 100; i++) {
+////            System.out.println(i);
+//            if (i % 15 == 0) {
+//                System.out.println("FizzBuzz");
+//            } else if (i % 5 == 0) {
+//                System.out.println("Buzz");
+//            } else if (i % 3 == 0) {
+//                System.out.println("Fizz");
+//            } else {
+//                System.out.println(i);
+//            }
+//        }
+
+        // 3
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("What number would you like to go up? ");
+        int upToUserInput = sc.nextInt();
+
+        System.out.println("Here is your table!\n");
+        System.out.println("number | squared | cubed");
+        System.out.println("------ | ------- | -----");
+
+        for (int i = 1; i <= upToUserInput; i++ ) {
+            double squared = Math.pow(i, 2);
+            double cubed = Math.pow(i, 3);
+            int sq = (int) squared;
+            int cu = (int) cubed;
+            System.out.printf("%s     | %s      | %s    \n", i, sq, cu);
         }
+
+        System.out.print("Continue? [y/N]\n");
+        String userInput = sc.next();
+        boolean confirm = userInput.equalsIgnoreCase("y");
     }
 }
