@@ -13,6 +13,7 @@ public class MethodsExercises {
         subtraction(userInput1, userInput2); // Calls "subtraction" method prioritizing the userInput as the parameter.
         multiplication(userInput1, userInput2); // Calls "multiplication" method prioritizing the userInput as the parameter.
         division(userInput1, userInput2); // Calls "division" method prioritizing the userInput as the parameter.
+        modulus(userInput1, userInput2); // Calls "division" method prioritizing the userInput as the parameter.
     }
 
     public static void addition(double input1, double input2) {
@@ -56,6 +57,17 @@ public class MethodsExercises {
             System.out.printf("Division: " + x + " / " + y + " = " + "%.0f%n", sum);
         } else {
             System.out.printf("Division: " + input1 + " / " + input2 + " = " + "%.2f%n", sum);
+        }
+    }
+
+    public static void modulus(double input1, double input2) {
+        double sum = input1 % input2;
+        if (input1 % 1 == 0 && input2 % 1 == 0) {
+            int x = (int) input1;
+            int y = (int) input2;
+            System.out.printf("Modulus: " + x + " / " + y + " = " + "%.0f%n", sum);
+        } else {
+            System.out.printf("Modulus: " + input1 + " / " + input2 + " = " + "%.2f%n", sum);
         }
     }
 }
