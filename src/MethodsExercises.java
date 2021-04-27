@@ -21,10 +21,16 @@ public class MethodsExercises {
          */
 
         // Ex: 2
+        /*
+        Calls the prompt() function to ask the user for integer between 1-10.
+        Once given the input, it will call the getInteger() function inside the prompt()
+        and attempts to validate the user's input. If the user has a valid input,
+        the prompt() function is completed. If the user input's a integer outside the valid conditions
+        then we recall the prompt() function and restart the process.
+        * ANALOGY: "A snake eating its own tail..." - kenneth(codeup instructor) *
+        */
+        prompt();
 
-        System.out.print("Please enter a number between 1 and 10:\n");
-        int userInput = sc.nextInt();
-        getInteger(userInput);
     }
 
     // For Exercise 1
