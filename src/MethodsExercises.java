@@ -4,18 +4,30 @@ public class MethodsExercises {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        // Ex: 1
         // We are asking the user for 2 numbers to utilize for our basic arithmetic methods
+        /*
         System.out.print("Please enter 2 numbers you would like to run through the basic arithmetic methods?\n");
         double userInput1 = sc.nextDouble();
         double userInput2 = sc.nextDouble();
-        // Ex: 1
+         */
+
+        /*
         addition(userInput1, userInput2); // Calls "addition" method prioritizing the userInput as the parameter.
         subtraction(userInput1, userInput2); // Calls "subtraction" method prioritizing the userInput as the parameter.
         multiplication(userInput1, userInput2); // Calls "multiplication" method prioritizing the userInput as the parameter.
         division(userInput1, userInput2); // Calls "division" method prioritizing the userInput as the parameter.
         modulus(userInput1, userInput2); // Calls "division" method prioritizing the userInput as the parameter.
+         */
+
+        // Ex: 2
+
+        System.out.print("Please enter a number between 1 and 10:\n");
+        int userInput = sc.nextInt();
+        getInteger(userInput);
     }
 
+    // For Exercise 1
     public static void addition(double input1, double input2) {
         double sum = input1 + input2;
         if (input1 % 1 == 0 && input2 % 1 == 0) {
@@ -68,6 +80,26 @@ public class MethodsExercises {
             System.out.printf("Modulus: " + x + " / " + y + " = " + "%.0f%n", sum);
         } else {
             System.out.printf("Modulus: " + input1 + " / " + input2 + " = " + "%.2f%n", sum);
+        }
+    }
+
+    // For Exercise 2
+    public static void prompt() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please enter a number between 1 and 10:\n");
+        int userInput = sc.nextInt();
+        getInteger(userInput);
+    }
+
+    public static void getInteger(int input) {
+        int min = 1;
+        int max = 10;
+
+        if (input < min || input > max) {
+            System.out.println("Sorry, invalid error. Try again!");
+            prompt();
+        } else {
+            System.out.println("Valid input!");
         }
     }
 }
