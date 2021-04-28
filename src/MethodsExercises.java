@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MethodsExercises {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        // Scanner sc = new Scanner(System.in);
 
         // Ex: 1
         // We are asking the user for 2 numbers to utilize for our basic arithmetic methods
@@ -29,8 +29,10 @@ public class MethodsExercises {
         then we recall the prompt() function and restart the process.
         * ANALOGY: "A snake eating its own tail..." - kenneth(codeup instructor) *
         */
-        prompt();
+        // prompt();
 
+        // Ex: 3
+        factorialPrompt();
     }
 
     // For Exercise 1
@@ -106,6 +108,42 @@ public class MethodsExercises {
             prompt();
         } else {
             System.out.println("Valid input!");
+        }
+    }
+
+    // For Exercise 3
+    public static void factorialPrompt() {
+        Scanner fp = new Scanner(System.in);
+        System.out.print("Please enter a integer from 1 to 10?\n");
+        int userInput = fp.nextInt();
+        factorialSolution(userInput);
+    }
+
+    public static void factorialSolution(int input) {
+        Scanner fs = new Scanner(System.in);
+        long fact = input;
+        int min = 1;
+        int max = 10;
+        boolean confirm;
+
+        if (input < min || input > max) {
+            System.out.println("Sorry, invalid error. Try again!");
+            factorialPrompt();
+        } else {
+
+            for (int i = 1; i <= input; i++) {
+                fact *= i;
+            }
+            System.out.println(input + "! = " + fact);
+
+            System.out.print("Would you like to continue? [y/N]\n");
+            String keepGoing = fs.next();
+            confirm = keepGoing.equalsIgnoreCase("y");
+            if (confirm) {
+                factorialPrompt();
+            } else {
+                System.out.println("Task completed!");
+            }
         }
     }
 }
