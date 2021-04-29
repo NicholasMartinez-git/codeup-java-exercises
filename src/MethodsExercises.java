@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.Scanner; // Allows Scanner to function
 
 public class MethodsExercises {
     public static void main(String[] args) {
