@@ -5,8 +5,9 @@ public class MethodsExercises {
         Scanner sc = new Scanner(System.in);
 
         // Ex: 1
-        /* We are asking the user for 2 numbers to utilize for our basic arithmetic methods
-
+        // We are asking the user for 2 numbers to utilize for our basic arithmetic methods
+        // Uncomment => "/* */" below to run code
+        /*
         System.out.print("Please enter 2 numbers you would like to run through the basic arithmetic methods?\n");
         double userInput1 = sc.nextDouble();
         double userInput2 = sc.nextDouble();
@@ -16,34 +17,30 @@ public class MethodsExercises {
         multiplication(userInput1, userInput2);
         division(userInput1, userInput2);
         modulus(userInput1, userInput2);
-
-         */
-
+        */
 
         // Ex: 2
         /*
-        Calls the prompt() function to ask the user for integer between 1-10.
-        Once given the input, it will call the getInteger() function inside the prompt()
-        and attempts to validate the user's input. If the user has a valid input,
-        the prompt() function is completed. If the user input's a integer outside the valid conditions
-        then we recall the prompt() function and restart the process.
-        * ANALOGY: "A snake eating its own tail..." - kenneth(codeup instructor) *
+        Usuage: Creates a method that validates the user's input is in a certain range.
+        */
+        // UNCOMMENT BELOW TO RUN CODE:
+        // prompt();
 
-        prompt();
 
-         */
 
         // Ex: 3
         /*
-        Calls the factorialPrompt() function to ask the user for integer between 1-10.
-        Once given the input, it will call the factorialSolution() function inside the factorialPrompt()
-        and attempts to validate the user's input. If the user has a valid input,
-        the function will run accordingly and display the factorial(n!) solution of said input
-
-        factorialPrompt();
-         */
+        Usage: Calculates the factorial of a integer
+        */
+        // UNCOMMENT BELOW TO RUN CODE:
+        // factorialPrompt();
 
         // Ex: 4
+        /*
+        Usage: Creates an applocation that stimulates dice rolling
+               -Assumes only a pair of dice will be rolled
+        */
+        // UNCOMMENT BELOW TO RUN CODE:
         // dicePrompt();
     }
 
@@ -131,53 +128,63 @@ public class MethodsExercises {
 
     // For Exercise 2
     public static void prompt() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Please enter a number between 1 and 10:\n");
-        int userInput = sc.nextInt();
-        getInteger(userInput);
+        Scanner sc = new Scanner(System.in); // Allows code to accept user input
+        System.out.print("Please enter a number between 1 and 10:\n"); // Prompts question
+        int userInput = sc.nextInt(); // Stores user input
+        getInteger(userInput); // Calls method/function to validate user's input
     }
 
     public static void getInteger(int input) {
         int min = 1;
         int max = 10;
 
+        // validates input is with min to max
         if (input < min || input > max) {
+            // Re-prompts question if input is invalid
             System.out.println("Sorry, invalid error. Try again!");
             prompt();
         } else {
+            // Input is within range
             System.out.println("Valid input!");
         }
     }
 
     // For Exercise 3
     public static void factorialPrompt() {
-        Scanner fp = new Scanner(System.in);
-        System.out.print("Please enter a integer from 1 to 10?\n");
-        int userInput = fp.nextInt();
+        Scanner fp = new Scanner(System.in); // Allows code to accept user input
+        System.out.print("Please enter a integer from 1 to 10?\n"); // Prompts question
+        int userInput = fp.nextInt(); // Stores user input
+
+        // Calls method/function to validate and calculate user's input
         factorialSolution(userInput);
     }
 
     public static void factorialSolution(int input) {
-        Scanner fs = new Scanner(System.in);
-        long fact = input;
+        Scanner fs = new Scanner(System.in); // Allows code to accept user input
+
+        long fact = input; // changes input into larger primitive data type
         int min = 1;
         int max = 10;
         boolean confirm;
 
+        // validates input is with min to max
         if (input < min || input > max) {
+            // Re-prompts question if input is invalid
             System.out.println("Sorry, invalid error. Try again!");
             factorialPrompt();
         } else {
-
+            // Input is within range.
             for (int i = 1; i <= input; i++) {
+                // multiples the input(fact) by each interger(i) until loop ends.
                 fact *= i;
             }
-            System.out.println(input + "! = " + fact);
+            System.out.println(input + "! = " + fact); // Displays results
 
-            System.out.print("Would you like to continue? [y/N]\n");
-            String keepGoing = fs.next();
-            confirm = keepGoing.equalsIgnoreCase("y");
+            System.out.print("Would you like to continue? [y/N]\n"); // Asks user to continue
+            String keepGoing = fs.next(); // Stores user input
+            confirm = keepGoing.equalsIgnoreCase("y"); // initializes boolean confirm with user's input
             if (confirm) {
+                // Re-starts the entire process of validation and calculating
                 factorialPrompt();
             } else {
                 System.out.println("Task completed!");
@@ -187,49 +194,56 @@ public class MethodsExercises {
 
     // For Exercise 4
     public static void dicePrompt() {
-        Scanner dp = new Scanner(System.in);
-        System.out.print("Please enter the number of sides for a each of die?\n");
-        int sidesOfDie1 = dp.nextInt();
-        int sidesOfDie2 = dp.nextInt();
-        System.out.print("Would you like to roll the dice? [y/N]\n");
-        String rollDice = dp.next();
-        boolean confirm = rollDice.equalsIgnoreCase("y");
+        Scanner dp = new Scanner(System.in); // Allows code to accept user input
+        System.out.print("Please enter the number of sides for a each of die?\n"); // Prompts question
+        int sidesOfDie1 = dp.nextInt(); // Stores first die input
+        int sidesOfDie2 = dp.nextInt(); // Stores second die input
+        System.out.print("Would you like to roll the dice? [y/N]\n"); // Prompts confirm question
+        String rollDice = dp.next(); // Stores answer input
+        boolean confirm = rollDice.equalsIgnoreCase("y"); // initializzes boolean confirm with user's input
         if (confirm) {
+            // Calls the method/function to produce a random roll
             diceRoll(sidesOfDie1, sidesOfDie2);
         } else {
+            // Exits method
             System.out.println("Maybe next time!");
         }
 
     }
 
     public static void diceRoll(int sidesOfDie1, int sidesOfDie2) {
-        Scanner dr = new Scanner(System.in);
-        boolean taskIncomplete = true;
+        Scanner dr = new Scanner(System.in); // Allows code to accept user input
+        boolean taskIncomplete = true; // initiation for do-while loop: Can only exit if this equals false.
 
         do {
-            int dieRoll1 = (int) (Math.random() * sidesOfDie1 - 1 + 1) + 1;
-            int dieRoll2 = (int) (Math.random() * sidesOfDie2 - 1 + 1) + 1;
-            int roll = (dieRoll1 + dieRoll2);
+            int dieRoll1 = (int) (Math.random() * sidesOfDie1 - 1 + 1) + 1; // generates random number for first die
+            int dieRoll2 = (int) (Math.random() * sidesOfDie2 - 1 + 1) + 1; // generates random number for second die
+            int roll = (dieRoll1 + dieRoll2); // sum of both die rolled
 
+            // Display for input above ^
             System.out.println("You rolled a " + roll);
             System.out.println(sidesOfDie1 + " sided die rolled a " + dieRoll1);
             System.out.println(sidesOfDie2 + " sided die rolled a " + dieRoll2);
 
-            System.out.print("Would you like to roll again? [y/N]\n");
-            String rollAgain = dr.next();
-            boolean confirmRoll = rollAgain.equalsIgnoreCase("y");
+            System.out.print("Would you like to roll again? [y/N]\n"); // Prompts rollAgain question
+            String rollAgain = dr.next(); // Stores answer input
+            boolean confirmRoll = rollAgain.equalsIgnoreCase("y"); // initializzes boolean confirmRoll with user's input
             if (confirmRoll == false){
+                // Exits method if answer input is no
                 System.out.println("Task Completed!");
                 break;
             }
-            System.out.print("Would you like to change dice? [y/N]\n");
-            String changeDice = dr.next();
-            boolean confirmDice = changeDice.equalsIgnoreCase("y");
+            System.out.print("Would you like to change dice? [y/N]\n"); // Prompts change dice question
+            String changeDice = dr.next(); // Stores answer
+            boolean confirmDice = changeDice.equalsIgnoreCase("y"); // initializzes boolean confirmDice with user's input
 
+            // Validates the previous two questions
             if (confirmRoll && confirmDice) {
+                // if both questions are true: Re-starts the entire process of picking dice and re-roll
                 dicePrompt();
                 taskIncomplete = false;
-            } else if (confirmRoll && confirmDice == false){
+            } else if (confirmRoll && confirmDice == false) {
+                // If ONLY confrimRoll equals true: restart the do-while loop
                 taskIncomplete = true;
             }
         } while (taskIncomplete);
