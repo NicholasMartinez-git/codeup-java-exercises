@@ -32,4 +32,28 @@ public class Input {
         System.out.println("Valid Input!");
         return input;
     }
+
+    public int getInt() {
+        return Integer.parseInt(sc.nextLine());
+    }
+
+    public double getDouble(double min, double max) {
+        System.out.printf("Please enter a number from %f to %f: %n", min, max); // Prompts question
+        double input = sc.nextDouble(); // Stores user input
+
+        // validates input is with min to max
+        if (input < min || input > max) {
+            // Re-prompts question if input is invalid
+            System.out.println("Sorry, invalid error. Try again!");
+            return getDouble(min, max);
+        }
+        System.out.println("Valid Input!");
+        return input;
+    }
+
+    public double getDouble() {
+        return sc.nextDouble();
+    }
+
+
 }
