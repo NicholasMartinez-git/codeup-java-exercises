@@ -2,20 +2,16 @@ package util;
 import java.util.Scanner;
 
 public class Input {
-    private Scanner sc;
-
-    public Input() {
-        this.sc = new Scanner(System.in);
-    }
+    private static Scanner sc = new Scanner(System.in);
 
     public String getString(){
         System.out.println("please enter a string");
-        return this.sc.next();
+        return sc.next();
     }
 
     public boolean yesNo(){
         System.out.println("please enter a string [yes/no]");
-        String answer = this.sc.next();
+        String answer = sc.next();
         return (answer.startsWith("y"));
     }
 
@@ -51,7 +47,7 @@ public class Input {
         return input;
     }
 
-    public double getDouble() {
+    public static double getDouble() {
         return sc.nextDouble();
     }
 
