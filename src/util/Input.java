@@ -9,7 +9,7 @@ public class Input {
         return sc.next();
     }
 
-    public boolean yesNo(){
+    public static boolean yesNo(){
         System.out.println("please enter a string [yes/no]");
         String answer = sc.next();
         return (answer.startsWith("y"));
