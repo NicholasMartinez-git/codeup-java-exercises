@@ -4,6 +4,11 @@ import java.util.Scanner;
 public class Input {
     private static Scanner sc = new Scanner(System.in);
 
+    public static int getInt(String prompt) {
+        System.out.println(prompt);
+        return Integer.parseInt(sc.nextLine());
+    }
+
     public String getString(){
         System.out.println("please enter a string");
         return sc.next();
@@ -29,7 +34,7 @@ public class Input {
         return input;
     }
 
-    public int getInt() {
+    public static int getInt() {
         return Integer.parseInt(sc.nextLine());
     }
 

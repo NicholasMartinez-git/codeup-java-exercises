@@ -4,7 +4,7 @@ public class Movie {
     private String name;
     private String category;
 
-    public void getMovie(String name, String category) {
+    public Movie(String name, String category) {
         setName(name);
         setCategory(category);
     }
