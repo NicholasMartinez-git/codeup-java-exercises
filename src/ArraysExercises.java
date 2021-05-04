@@ -16,5 +16,15 @@ public class ArraysExercises {
         for (int i = 0; i < people.length; i++) {
             System.out.println(people[i].getName());
         }
+
+        addPerson(people, "pat");
+    }
+
+    public static void addPerson(Person[] people, String name) {
+        Person[] personCopy = Arrays.copyOf(people, people.length + 1);
+        personCopy[personCopy.length - 1] = new Person(name);
+        for (Person person : personCopy) {
+            System.out.println(person.getName());
+        }
     }
 }
