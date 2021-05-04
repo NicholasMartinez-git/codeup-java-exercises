@@ -27,4 +27,6 @@ public class ArraysExercises {
             System.out.println(person.getName());
         }
     }
+
+
 }
