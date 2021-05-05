@@ -1,10 +1,8 @@
 package shapes;
-import java.util.Scanner;
 
 public class Rectangle {
     protected double length;
     protected double width;
-    public static Scanner sc = new Scanner(System.in);
 
     public Rectangle() {
         this.length = 0;
