@@ -65,5 +65,6 @@ public class HighLow {
         } else if (guessCount <= 100) {
             System.out.println("My battery is low and it's getting dark.");
         }
+
     }
 }
