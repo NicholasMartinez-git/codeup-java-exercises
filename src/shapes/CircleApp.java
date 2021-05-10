@@ -7,8 +7,10 @@ public class CircleApp {
         do {
             System.out.println("Please enter a radius: ");
             double radius = Input.getDouble();
-            System.out.println("Area: " + Circle.getArea());
-            System.out.println("Circumference: " + Circle.getCircumference());
+            Circle myCircle = new Circle(radius);
+            System.out.println("Radius: " + radius);
+            System.out.println("Area: " + myCircle.getArea());
+            System.out.println("Circumference: " + myCircle.getCircumference());
             another = Input.yesNo();
         } while (another);
     }

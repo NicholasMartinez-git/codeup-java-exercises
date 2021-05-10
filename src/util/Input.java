@@ -2,27 +2,54 @@ package util;
 import java.util.Scanner;
 
 public class Input {
-    private static Scanner sc = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);;
+
+    // TODO: Rule-of-Thump for using static => "Does it make sense to call this method, even if no object has been constructed yet?"
+
+    public static String getString() {
+        String str = scanner.nextLine(); // Stores user input
+        return str;
+    }
+
+    public static String getString(String prompt) {
+        System.out.printf("%s%n", prompt);
+        String str = scanner.nextLine(); // Stores user input
+        return str;
+    }
+
+    public static boolean yesNo() {
+        String answer = scanner.nextLine(); // Stores user input
+        if (answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("yea")){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean yesNo(String prompt) {
+        System.out.printf("%s%n", prompt);
+        String answer = scanner.nextLine(); // Stores user input
+        if (answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("yea")){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static int getInt() {
+        int input = scanner.nextInt(); // Stores user input
+        return input;
+    }
 
     public static int getInt(String prompt) {
-        System.out.println(prompt);
-        return Integer.parseInt(sc.nextLine());
+        System.out.printf("%s%n", prompt);
+        int input = scanner.nextInt(); // Stores user input
+        return input;
     }
 
-    public String getString(){
-        System.out.println("please enter a string");
-        return sc.next();
-    }
-
-    public static boolean yesNo(){
-        System.out.println("please enter a string [yes/no]");
-        String answer = sc.next();
-        return (answer.startsWith("y"));
-    }
-
-    public int getInt(int min, int max) {
-        System.out.printf("Please enter a integer from %d to %d: %n", min, max); // Prompts question
-        int input = Integer.parseInt(sc.nextLine()); // Stores user input
+    public static int getInt(int min, int max) {
+        System.out.printf("Please enter a number from %f to %f: %n", min, max); // Prompts question
+        int input = scanner.nextInt(); // Stores user input
 
         // validates input is with min to max
         if (input < min || input > max) {
@@ -34,13 +61,20 @@ public class Input {
         return input;
     }
 
-    public static int getInt() {
-        return Integer.parseInt(sc.nextLine());
+    public static double getDouble() {
+        double input = scanner.nextDouble(); // Stores user input
+        return input;
     }
 
-    public double getDouble(double min, double max) {
+    public static double getDouble(String prompt) {
+        System.out.printf("%s%n", prompt);
+        double input = scanner.nextDouble(); // Stores user input
+        return input;
+    }
+
+    public static double getDouble(double min, double max) {
         System.out.printf("Please enter a number from %f to %f: %n", min, max); // Prompts question
-        double input = sc.nextDouble(); // Stores user input
+        double input = scanner.nextDouble(); // Stores user input
 
         // validates input is with min to max
         if (input < min || input > max) {
@@ -51,10 +85,4 @@ public class Input {
         System.out.println("Valid Input!");
         return input;
     }
-
-    public static double getDouble() {
-        return sc.nextDouble();
-    }
-
-
 }
