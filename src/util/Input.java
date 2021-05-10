@@ -37,19 +37,37 @@ public class Input {
     }
 
     public static int getInt() {
-        int input = scanner.nextInt(); // Stores user input
+        int input = 0;
+        boolean notAInteger = true;
+        while (notAInteger) {
+            try {
+                input = Integer.parseInt(getString());
+                notAInteger = false;// Stores user input
+            } catch (Exception e) {
+                System.out.println("You did not enter an integer. Try again");
+            }
+        }
         return input;
     }
 
     public static int getInt(String prompt) {
-        System.out.printf("%s%n", prompt);
-        int input = scanner.nextInt(); // Stores user input
+        int input = 0;
+        boolean notAInteger = true;
+        while (notAInteger) {
+            try {
+                System.out.printf("%s%n", prompt);
+                input = Integer.parseInt(getString());
+                notAInteger = false;// Stores user input
+            } catch (Exception e) {
+                System.out.println("You did not enter an integer. Try again");
+            }
+        }
         return input;
     }
 
     public static int getInt(int min, int max) {
-        System.out.printf("Please enter a number from %f to %f: %n", min, max); // Prompts question
-        int input = scanner.nextInt(); // Stores user input
+        System.out.printf("Please enter a number from %s to %s: %n", min, max); // Prompts question
+        int input = getInt(); // Stores user input
 
         // validates input is with min to max
         if (input < min || input > max) {
@@ -62,19 +80,37 @@ public class Input {
     }
 
     public static double getDouble() {
-        double input = scanner.nextDouble(); // Stores user input
+        double input = 0;
+        boolean notANumber = true;
+        while (notANumber) {
+            try {
+                input = Double.parseDouble(getString());
+                notANumber = false;// Stores user input
+            } catch (Exception e) {
+                System.out.println("You did not enter an Number. Try again");
+            }
+        }
         return input;
     }
 
     public static double getDouble(String prompt) {
-        System.out.printf("%s%n", prompt);
-        double input = scanner.nextDouble(); // Stores user input
+        double input = 0;
+        boolean notANumber = true;
+        while (notANumber) {
+            try {
+                System.out.printf("%s%n", prompt);
+                input = Double.parseDouble(getString());
+                notANumber = false;// Stores user input
+            } catch (Exception e) {
+                System.out.println("You did not enter an number. Try again");
+            }
+        }
         return input;
     }
 
     public static double getDouble(double min, double max) {
         System.out.printf("Please enter a number from %f to %f: %n", min, max); // Prompts question
-        double input = scanner.nextDouble(); // Stores user input
+        double input = Double.parseDouble(getString()); // Stores user input
 
         // validates input is with min to max
         if (input < min || input > max) {
